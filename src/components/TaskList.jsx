@@ -7,7 +7,7 @@ function TaskList() {
     //     description: "Eat eggs",
     // }
 
-    const {tasks} = useTaskContext()
+    const {tasks, deleteTask, updateCompleted, updateDescription} = useTaskContext()
 
     return (
         <div>
@@ -15,8 +15,12 @@ function TaskList() {
                 tasks.map((task, index) => (
                 <Task 
                     key={index} 
+                    index = {index}
                     description={task.description}
                     completed = {task.completed} 
+                    deleteTask = {deleteTask}
+                    updateCompleted={updateCompleted}
+                    updateDescription = {updateDescription}
                 />
             ))
             ) : (
