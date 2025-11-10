@@ -72,14 +72,14 @@ function Task({
                 onCancel={handleCancelEdit}
               />
             ) : (
-              <span
+              <Typography variant = 'body2'
                 style={{
                   // optional syntax: if true ? this value : otherwise this value
                   textDecoration: completed ? 'line-through' : 'none',
                 }}
               >
                 {description}
-              </span>
+              </Typography>
             )}
           </Box>
 

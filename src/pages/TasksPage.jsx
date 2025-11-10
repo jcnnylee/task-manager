@@ -97,7 +97,7 @@ function TasksPage() {
           </Typography>
       </Stack>
 
-      <Stack spacing = {4} marginTop = {10}>
+      <Stack spacing = {4} marginTop = {6}>
         <TaskContext
             value = {{
               tasks: taskList,

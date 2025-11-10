@@ -30,14 +30,14 @@ function TaskForm() {
                 style = {{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px'
+                    gap: '10px',
                 }}>
 
                 {/* <Typography variant = 'subtitle1'>
                     Description
                 </Typography> */}
 
-               
+              
                 <TextField variant = 'outlined' size = 'small'
                 
                     type = "text" 
@@ -50,12 +50,18 @@ function TaskForm() {
 
                     sx = {{
                         width: '600px',
+            
                     }}
                     
                 />
             
                 <Button
-                    type = 'submit' variant = 'contained' color = 'inherit' size = 'small'>
+                    type = 'submit' variant = 'contained' color = 'primary' size = 'small'
+                    sx = {{
+                        height: '38px',
+                        borderRadius: '50px'
+                    }}
+                >
                     Add Task
                 </Button>
                         

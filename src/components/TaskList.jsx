@@ -1,6 +1,9 @@
 import Task from './Task';
 import {useTaskContext} from './TaskContext'
 
+//import styling components from MUI
+import {Box, Stack, Typography,} from '@mui/material';
+
 function TaskList() {
     // tasks[0] = {
     //     completed:false,
@@ -25,9 +28,12 @@ function TaskList() {
                 />
             ))
             ) : (
-                <p>No tasks to display!</p>
+                <Typography variant = 'subtitle1'>No tasks to display!</Typography>
             )}
-            {tasks.length > 0 && <p>There are {tasks.length} tasks in the list</p>}
+            {tasks.length > 0 && 
+                <Typography variant = 'subtitle2' marginY = {2}>
+                    There are {tasks.length} tasks in the list
+                </Typography>}
         </div>
     );
 }
