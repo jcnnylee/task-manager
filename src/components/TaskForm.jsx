@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState} from "react"
 import { useTaskContext } from "./TaskContext.jsx"
+import { Button , Typography , Box } from "@mui/material"
 // import { useSelector } from "react-redux"
 
 function TaskForm() {
@@ -17,25 +18,29 @@ function TaskForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        //users should be unable to add an empty task
+        if (description.trim() === '') return
         addTask(description)
         setDescription('')
     }
 
     return (
-        <form onSubmit = {handleSubmit}>
-            <label htmlFor = "description">
-                Description
-            </label>
-            <input 
-                type = "text" 
-                id = "description" 
-                name = "description"
-                value = {description}
-                ref = {inputRef}
-                onChange = {(e) => {setDescription (e.target.value)}}
-            />
-            <button type = "submit">Add Task</button>
-        </form>
+        <Box>
+            <form onSubmit = {handleSubmit}>
+                <label htmlFor = "description">
+                    Description
+                </label>
+                <input 
+                    type = "text" 
+                    id = "description" 
+                    name = "description"
+                    value = {description}
+                    ref = {inputRef}
+                    onChange = {(e) => {setDescription (e.target.value)}}
+                />
+                <Button type = 'submit' variant = 'contained' color = 'inherit' size = 'small'>Add Task</Button>
+            </form>
+        </Box>
     )
 }
 export default TaskForm;

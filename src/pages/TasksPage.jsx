@@ -1,9 +1,13 @@
 import { useEffect } from 'react'
-import "../App.css"
+//import "../App.css"
 import { TaskContext, TaskForm, TaskList } from "../components"
 import axios from 'axios'
 import { tasksSlice } from '../redux/tasksSlice'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { Button, Box , Stack, Typography } from '@mui/material'
+import ListAltIcon from '@mui/icons-material/ListAlt'
+import { Link } from 'react-router-dom'
 
 function TasksPage() {
   // const [taskList, setTaskList] = useState([])
@@ -83,19 +87,36 @@ function TasksPage() {
   }
 
   return (
-    <TaskContext
-      value = {{
-        tasks: taskList,
-        addTask,
-        deleteTask,
-        updateCompleted,
-        updateDescription,
-      }}
-    >
-      <TaskForm />
-      <TaskList />
-    </TaskContext>
+
+    <Stack alignItems='center' marginTop={4}>
+
+      <Stack direction = 'row' spacing={1} alignItems = 'center'>
+        <ListAltIcon/>
+          <Typography variant = 'h6' fontweight = 'medium'>
+            Task Manager
+          </Typography>
+      </Stack>
+
+      <Stack spacing = {4} marginTop = {10}>
+        <TaskContext
+            value = {{
+              tasks: taskList,
+              addTask,
+              deleteTask,
+              updateCompleted,
+              updateDescription,
+            }}
+            >
+            <TaskForm />
+            <TaskList />
+        </TaskContext>
+      </Stack>
+
+    </Stack>
+    
+    
   )
+    
 }
 
 export default TasksPage

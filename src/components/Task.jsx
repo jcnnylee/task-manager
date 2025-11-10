@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import EditDescription from './EditDescription'
+import { Link } from 'react-router-dom'
+//import { tasksSlice } from '../redux/tasksSlice'
+
+//styling imports
+import { Checkbox, Button, Typography, Box, Divider } from '@mui/material'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 /**
  * This renders a single Task
@@ -7,6 +14,7 @@ import EditDescription from './EditDescription'
  * All the logic of the buttons are passed down from App.jsx
  */
 function Task({
+  id,
   description = '',
   completed = false,
   deleteTask,
@@ -35,42 +43,73 @@ function Task({
   }
 
   return (
-    <div
-      // The style prop is similar to CSS syntax
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        padding: '2px',
-        gap: '10px',
-      }}
-    >
-      <input
-        type='checkbox'
-        checked={completed}
-        onChange={(e) => {
-          updateCompleted(index, e.target.checked)
+    <Box>
+      <Box
+        // The style prop is similar to CSS syntax
+        sx ={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '4px',
+          gap: '10px',
         }}
-      />
-      {editing ? (
-        <EditDescription
-          index={index}
-          description={description}
-          onEdit={handleEdit}
-          onCancel={handleCancelEdit}
-        />
-      ) : (
-        <span
-          style={{
-            // optional syntax: if true ? this value : otherwise this value
-            textDecoration: completed ? 'line-through' : 'none',
-          }}
         >
-          {description}
-        </span>
-      )}
-      {!completed && <button onClick={() => setEditing(true)}>Edit</button>}
-      <button onClick={handleDelete}>Delete</button>
-    </div>
+          <Box sx = {{display: 'flex', alignItems: 'center', gap: 1}}>
+              <Checkbox color = 'success'
+                //type='checkbox'
+                checked={completed}
+                onChange={(e) => {
+                  updateCompleted(index, e.target.checked)
+                }}
+              />
+
+
+            {editing ? (
+              <EditDescription
+                index={index}
+                description={description}
+                onEdit={handleEdit}
+                onCancel={handleCancelEdit}
+              />
+            ) : (
+              <span
+                style={{
+                  // optional syntax: if true ? this value : otherwise this value
+                  textDecoration: completed ? 'line-through' : 'none',
+                }}
+              >
+                {description}
+              </span>
+            )}
+          </Box>
+
+        <Box sx = {{display: 'flex', alignItems: 'center', gap: 1}}>
+          {!completed && 
+            <EditOutlinedIcon size = 'small' cursor = 'pointer'
+              onClick={() => setEditing(true)}>
+              Edit
+            </EditOutlinedIcon>}
+
+          <DeleteOutlineIcon size = 'small' cursor = 'pointer'
+              onClick={handleDelete}>
+              Delete
+          </DeleteOutlineIcon>
+
+          <Link to={`/tasks/${id}`}
+            //gets rid of the blue hyperlink styling
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+
+            <Button variant = 'contained' color = 'grey' size = 'small'>
+              View
+            </Button>
+
+          </Link>
+        </Box>
+
+      </Box>
+      <Divider sx = {{oppacity: 0.5, width: '100%'}}/>
+    </Box>
+    
   )
 }
 

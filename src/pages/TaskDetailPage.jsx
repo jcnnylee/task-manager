@@ -2,6 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
+//styling imports
+import { Button, Box , Stack, Typography } from '@mui/material'
+import ListAltIcon from '@mui/icons-material/ListAlt'
+import { Link } from 'react-router-dom'
+
 function TaskDetailPage() {
     // useParams from React router to get the id from the URL
     const {id} = useParams()
@@ -35,13 +40,21 @@ function TaskDetailPage() {
     }
     
     if (!task) return null
-    
+
     return (
-        <div>
+        
+        <Stack alignItems='center' marginTop={4}>
+            <Stack direction = 'row' spacing={1} alignItems = 'center'>
+                <ListAltIcon/>
+                <Typography variant = 'h6' fontweight = 'medium'>
+                    Task Manager
+                </Typography>
+            </Stack>
+
             <h1>Task Detail</h1>
             <p>Description: {task.description}</p>
             <p>Completed: {task.completed ? 'Yes' : 'No'}</p>
-        </div>
+        </Stack>
     )
 }
 

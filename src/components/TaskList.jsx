@@ -16,6 +16,7 @@ function TaskList() {
                 <Task 
                     key={index} 
                     index = {index}
+                    id = {task.id}
                     description={task.description}
                     completed = {task.completed} 
                     deleteTask = {deleteTask}
