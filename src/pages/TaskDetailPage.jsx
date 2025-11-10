@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { Button, Box , Stack, Typography } from '@mui/material'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import { Link } from 'react-router-dom'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 function TaskDetailPage() {
     // useParams from React router to get the id from the URL
@@ -50,10 +51,45 @@ function TaskDetailPage() {
                     Task Manager
                 </Typography>
             </Stack>
+            
+            <Box
+                sx = {{
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '400px',
+                    aspectRatio: '1 / 1',
+                    backgroundColor: 'lightgray',
+                    margin: 8,
+                    borderRadius: 10,
+                    //padding: 5,
 
-            <h1>Task Detail</h1>
-            <p>Description: {task.description}</p>
-            <p>Completed: {task.completed ? 'Yes' : 'No'}</p>
+                }}> 
+
+                <Link to = '/tasks' 
+                    style = {{
+                        textDecoration: 'none',
+                        color: 'inherit'
+                }}>
+                <HighlightOffIcon fontSize="large" 
+                    sx = {{
+                        position: 'absolute',
+                        top: 20,
+                        left: 20,
+                        cursor: 'pointer',
+                    }}
+                ></HighlightOffIcon>
+                </Link>
+
+                <Stack direction = 'column' spacing={3} alignItems = 'center'>
+                    <Typography variant = 'h4'>Task Detail</Typography>
+                    <Typography variant = 'h6'>Description: {task.description}</Typography>
+                    <Typography variant = 'subtitle1'>Completed: {task.completed ? 'Yes' : 'No'}</Typography>
+                </Stack>
+
+            </Box>
         </Stack>
     )
 }
