@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState} from "react"
 import { useTaskContext } from "./TaskContext.jsx"
-import { Button , Typography , Box } from "@mui/material"
+import { Button , Typography , Box, TextField } from "@mui/material"
 // import { useSelector } from "react-redux"
 
 function TaskForm() {
@@ -26,19 +26,39 @@ function TaskForm() {
 
     return (
         <Box>
-            <form onSubmit = {handleSubmit}>
-                <label htmlFor = "description">
+            <form onSubmit = {handleSubmit}
+                style = {{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
+                }}>
+
+                {/* <Typography variant = 'subtitle1'>
                     Description
-                </label>
-                <input 
+                </Typography> */}
+
+               
+                <TextField variant = 'outlined' size = 'small'
+                
                     type = "text" 
                     id = "description" 
                     name = "description"
                     value = {description}
                     ref = {inputRef}
                     onChange = {(e) => {setDescription (e.target.value)}}
+                    placeholder = "Enter task description"
+
+                    sx = {{
+                        width: '600px',
+                    }}
+                    
                 />
-                <Button type = 'submit' variant = 'contained' color = 'inherit' size = 'small'>Add Task</Button>
+            
+                <Button
+                    type = 'submit' variant = 'contained' color = 'inherit' size = 'small'>
+                    Add Task
+                </Button>
+                        
             </form>
         </Box>
     )

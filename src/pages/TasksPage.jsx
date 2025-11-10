@@ -108,7 +108,7 @@ function TasksPage() {
             }}
             >
             <TaskForm />
-            <TaskList />
+            <TaskList/>
         </TaskContext>
       </Stack>
 
