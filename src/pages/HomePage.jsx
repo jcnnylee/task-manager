@@ -7,12 +7,12 @@ function HomePage() {
     return (
         <Stack direction = 'row' justifyContent = 'center' minHeight = '80vh' marginY = 'auto'>
             <Box padding = {16} marginY = 'auto'>
-                <Stack direction = 'row' spacing={1} alignItems = 'center'>
+                {/* <Stack direction = 'row' spacing={1} alignItems = 'center'>
                     <ListAltIcon/>
                     <Typography variant = 'h5' fontweight = 'medium'>
                         Task Manager
                     </Typography>
-                </Stack>
+                </Stack> */}
 
                 <Stack marginY = {10} spacing = {2}>
                     <Typography variant = 'h4'>
@@ -32,11 +32,9 @@ function HomePage() {
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    height: '50',
-                    //backgroundColor: 'gray',
-                    width: '50%',
-                    margin: 8,
-                    borderRadius: 10,
+                    width: '50vw',
+                    marginTop: 16,
+                    borderRadius: 5,
                 }}> 
             </Box>
             

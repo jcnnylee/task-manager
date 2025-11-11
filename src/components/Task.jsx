@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { Checkbox, Button, Typography, Box, Divider } from '@mui/material'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 /**
  * This renders a single Task
@@ -50,11 +51,22 @@ function Task({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '4px',
-          gap: '10px',
+          gap: 30,
+          padding: 1,
+       
         }}
         >
-          <Box sx = {{display: 'flex', alignItems: 'center', gap: 1}}>
+          
+          <Box
+            sx = {{
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: 2,
+              flex: 1,
+              minWidth: 0,
+              
+            }}>
+
               <Checkbox color = 'success'
                 //type='checkbox'
                 checked={completed}
@@ -73,7 +85,9 @@ function Task({
               />
             ) : (
               <Typography variant = 'body2'
-                style={{
+             
+                sx={{
+
                   // optional syntax: if true ? this value : otherwise this value
                   textDecoration: completed ? 'line-through' : 'none',
                 }}
@@ -83,7 +97,7 @@ function Task({
             )}
           </Box>
 
-        <Box sx = {{display: 'flex', alignItems: 'center', gap: 1}}>
+        <Box sx = {{display: 'flex', alignItems: 'center', gap: 1,}}>
           {!completed && 
             <EditOutlinedIcon size = 'small' cursor = 'pointer'
               onClick={() => setEditing(true)}>
@@ -99,9 +113,9 @@ function Task({
             //gets rid of the blue hyperlink styling
             style={{ textDecoration: 'none', color: 'inherit' }}>
 
-            <Button variant = 'contained' color = 'grey' size = 'small'>
+            <VisibilityIcon variant = 'contained' color = 'grey' size = 'small'>
               View
-            </Button>
+            </VisibilityIcon>
 
           </Link>
         </Box>

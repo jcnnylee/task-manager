@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { shadows } from '@mui/system'
+
 
 //styling imports
-import { Button, Box , Stack, Typography } from '@mui/material'
+import { Button, Box , Stack, Typography, } from '@mui/material'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import { Link } from 'react-router-dom'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { SocialDistance } from "@mui/icons-material";
 
 function TaskDetailPage() {
     // useParams from React router to get the id from the URL
@@ -44,50 +47,58 @@ function TaskDetailPage() {
 
     return (
         
-        <Stack alignItems='center' marginTop={4}>
-            <Stack direction = 'row' spacing={1} alignItems = 'center'>
-                <ListAltIcon/>
-                <Typography variant = 'h6' fontweight = 'medium'>
-                    Task Manager
-                </Typography>
-            </Stack>
-            
+        <Stack alignItems='center' marginTop={10}>
+            {/*Box container that wraps the entire taskDescription in a white background */}
             <Box
                 sx = {{
-                    position: 'relative',
+
+                    width: "400px",
+                    margin: 4,
+                    backgroundColor: "white",
+                    borderRadius: 3,
+                    boxShadow: 3,
+                    position: "relative",
+                    padding: 8,
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '400px',
-                    aspectRatio: '1 / 1',
-                    backgroundColor: 'lightgray',
-                    margin: 8,
-                    borderRadius: 10,
-                    //padding: 5,
+        
 
                 }}> 
 
+                {/*The cancel icon that links itself back to the tasks page */}
                 <Link to = '/tasks' 
                     style = {{
                         textDecoration: 'none',
                         color: 'inherit'
                 }}>
-                <HighlightOffIcon fontSize="large" 
+                <HighlightOffIcon fontSize="medium" 
                     sx = {{
                         position: 'absolute',
-                        top: 20,
-                        left: 20,
+                        top: 15,
+                        left: 15,
                         cursor: 'pointer',
                     }}
                 ></HighlightOffIcon>
                 </Link>
+                
 
-                <Stack direction = 'column' spacing={3} alignItems = 'center'>
-                    <Typography variant = 'h4'>Task Detail</Typography>
-                    <Typography variant = 'h6'>Description: {task.description}</Typography>
-                    <Typography variant = 'subtitle1'>Completed: {task.completed ? 'Yes' : 'No'}</Typography>
-                </Stack>
+                
+                    <Typography variant = 'h6' sx ={{marginBottom: 1}}>Task Detail</Typography>
+                    <Typography variant = 'subtitle2'>Description</Typography>
+                        <Box
+                            sx ={{
+                                backgroundColor: '#f0f0f0',
+                                border: '1px solid',
+                                borderColor: 'black',
+                                borderRadius: 3,
+                                padding: 1,
+                                paddingLeft: 2,
+                            }}>
+                            <Typography variant = 'subtitle2'> {task.description}</Typography>
+                        </Box>
+                   
+                    <Typography variant = 'subtitle2'>{task.completed ? 'Completed' : 'Not Completed'}</Typography>
+              
 
             </Box>
         </Stack>

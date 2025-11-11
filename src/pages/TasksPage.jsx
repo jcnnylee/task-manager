@@ -88,14 +88,14 @@ function TasksPage() {
 
   return (
 
-    <Stack alignItems='center' marginTop={4}>
+    <Stack alignItems='center' marginTop={10}>
 
-      <Stack direction = 'row' spacing={1} alignItems = 'center'>
+      {/* <Stack direction = 'row' spacing={1} alignItems = 'center'>
         <ListAltIcon/>
-          <Typography variant = 'h6' fontweight = 'medium'>
+          <Typography variant = 'h6'>
             Task Manager
           </Typography>
-      </Stack>
+      </Stack> */}
 
       <Stack spacing = {4} marginTop = {6}>
         <TaskContext

@@ -30,7 +30,11 @@ function TaskForm() {
                 style = {{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap',
+                    gap: 10,
+                    // width : '100%',
+                    // max: 'auto',
                 }}>
 
                 {/* <Typography variant = 'subtitle1'>
@@ -49,17 +53,20 @@ function TaskForm() {
                     placeholder = "Enter task description"
 
                     sx = {{
-                        width: '600px',
+                        flex: 1,
+                        width: '100%',
             
                     }}
                     
                 />
             
                 <Button
-                    type = 'submit' variant = 'contained' color = 'primary' size = 'small'
+                    type = 'submit' variant = 'contained' size = 'small'
                     sx = {{
+                        backgroundColor: '#505081',
+                        padding: '8px',
                         height: '38px',
-                        borderRadius: '50px'
+                        borderRadius: '5px'
                     }}
                 >
                     Add Task

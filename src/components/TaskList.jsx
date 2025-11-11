@@ -13,7 +13,14 @@ function TaskList() {
     const {tasks, deleteTask, updateCompleted, updateDescription} = useTaskContext()
 
     return (
-        <div>
+        <Box
+            sx = {{
+                backgroundColor: 'white',
+                borderRadius: 2,
+                boxShadow: 3,
+                paddingRight: 1
+            }}
+        >
             {tasks.length > 0 ? (
                 tasks.map((task, index) => (
                 <Task 
@@ -31,10 +38,10 @@ function TaskList() {
                 <Typography variant = 'subtitle1'>No tasks to display!</Typography>
             )}
             {tasks.length > 0 && 
-                <Typography variant = 'subtitle2' marginY = {2}>
+                <Typography variant = 'subtitle2' marginY = {2} textAlign = 'center' color = 'gray'>
                     There are {tasks.length} tasks in the list
                 </Typography>}
-        </div>
+        </Box>
     );
 }
 export default TaskList;
