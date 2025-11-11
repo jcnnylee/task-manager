@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom'
 import { Checkbox, Button, Typography, Box, Divider } from '@mui/material'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { OpenInNew } from '@mui/icons-material'
 
 /**
  * This renders a single Task
@@ -113,9 +114,9 @@ function Task({
             //gets rid of the blue hyperlink styling
             style={{ textDecoration: 'none', color: 'inherit' }}>
 
-            <VisibilityIcon variant = 'contained' color = 'grey' size = 'small'>
+            <OpenInNewIcon variant = 'contained' color = 'grey' size = 'small'>
               View
-            </VisibilityIcon>
+            </OpenInNewIcon>
 
           </Link>
         </Box>

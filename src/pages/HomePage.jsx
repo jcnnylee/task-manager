@@ -22,7 +22,8 @@ function HomePage() {
                     <Typography variant = 'subtitle1' color = 'GrayText'>Built by Jenny Lee</Typography>
                 </Stack>
 
-                <Button size = 'large' variant = 'contained' component = {Link} to = '/tasks'>
+                <Button size = 'large' variant = 'contained' component = {Link} to = '/tasks'
+                    sx = {{backgroundColor: '#272757', fontWeight: 'bold'}}>
                     See My Tasks
                 </Button>
             </Box>

@@ -58,7 +58,7 @@ function TaskDetailPage() {
                     borderRadius: 3,
                     boxShadow: 3,
                     position: "relative",
-                    padding: 8,
+                    padding: 6,
                     display: 'flex',
                     flexDirection: 'column',
         
@@ -83,22 +83,33 @@ function TaskDetailPage() {
                 
 
                 
-                    <Typography variant = 'h6' sx ={{marginBottom: 1}}>Task Detail</Typography>
-                    <Typography variant = 'subtitle2'>Description</Typography>
+                    <Typography variant = 'h6' sx ={{marginBottom: 1, color: '#505081'}}>Task Detail</Typography>
+                    <Typography variant = 'subtitle2' sx = {{color: 'gray'}}>Description</Typography>
                         <Box
                             sx ={{
-                                backgroundColor: '#f0f0f0',
                                 border: '1px solid',
                                 borderColor: 'black',
-                                borderRadius: 3,
-                                padding: 1,
-                                paddingLeft: 2,
+                                borderRadius: 2,
+                                padding: '3px',
+                                paddingLeft: 1,
                             }}>
                             <Typography variant = 'subtitle2'> {task.description}</Typography>
                         </Box>
-                   
-                    <Typography variant = 'subtitle2'>{task.completed ? 'Completed' : 'Not Completed'}</Typography>
-              
+
+                    <Typography variant = 'subtitle2' sx = {{color: 'gray', marginTop: 2}}>Status</Typography> 
+                    <Box
+                        sx ={{
+                            border: '1px solid',
+                            borderColor: 'black',
+                            borderRadius: 2,
+                            padding: '3px',
+                            paddingLeft: 1,
+                        }}>
+                        <Typography variant = 'subtitle2'>
+                            {task.completed ? 'Completed' : 'Not Completed'}
+                        </Typography>
+
+                    </Box>
 
             </Box>
         </Stack>
