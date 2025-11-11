@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 //styling imports
 import { Checkbox, Button, Typography, Box, Divider } from '@mui/material'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { OpenInNew } from '@mui/icons-material'
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+
 
 /**
  * This renders a single Task
@@ -68,7 +68,7 @@ function Task({
               
             }}>
 
-              <Checkbox color = 'success'
+              <Checkbox sx = {{'&.Mui-checked': {color: '#505081'}}}
                 //type='checkbox'
                 checked={completed}
                 onChange={(e) => {

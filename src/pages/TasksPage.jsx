@@ -88,16 +88,9 @@ function TasksPage() {
 
   return (
 
-    <Stack alignItems='center' marginTop={10}>
+    <Stack alignItems='center' marginTop={8}>
 
-      {/* <Stack direction = 'row' spacing={1} alignItems = 'center'>
-        <ListAltIcon/>
-          <Typography variant = 'h6'>
-            Task Manager
-          </Typography>
-      </Stack> */}
-
-      <Stack spacing = {4} marginTop = {6}>
+      <Stack spacing = {4} margin = {6}>
         <TaskContext
             value = {{
               tasks: taskList,

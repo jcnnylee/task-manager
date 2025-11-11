@@ -35,8 +35,9 @@ function TaskList() {
                 />
             ))
             ) : (
-                <Typography variant = 'subtitle1'>No tasks to display!</Typography>
+                <Typography variant = 'subtitle1' textAlign='center'>No tasks to display!</Typography>
             )}
+
             {tasks.length > 0 && 
                 <Typography variant = 'subtitle2' marginY = {2} textAlign = 'center' color = 'gray'>
                     There are {tasks.length} tasks in the list

@@ -10,7 +10,7 @@ function Nav() {
     >
       <Toolbar sx={{ display: 'flex', alignItems: 'center' }}>
         {/*Menu Icon does not work for now, just to make it look stylish*/}
-        <MenuIcon sx={{ marginRight: 2, fontSize: 30 }} />
+        <MenuIcon sx={{ marginRight: 2, fontSize: 30, }} />
         <Link
           to="/"
           style={{

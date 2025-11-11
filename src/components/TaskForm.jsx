@@ -64,7 +64,7 @@ function TaskForm() {
                     type = 'submit' variant = 'contained' size = 'small'
                     sx = {{
                         backgroundColor: '#505081',
-                        padding: '8px',
+                        padding: '12px',
                         height: '38px',
                         borderRadius: '5px'
                     }}
